@@ -1,4 +1,5 @@
 import ToasterProvider from "./Providers/ToasterProvider";
+import getCurrentUser from "./actions/getCurrentUser";
 import LoginModal from "./components/Modals/LoginModal";
 import Modal from "./components/Modals/Modal";
 import RegisterModal from "./components/Modals/RegisterModal";
@@ -13,18 +14,20 @@ export const metadata = {
   description: "This is Airbnb clone app",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="en">
       <body className={nunitoFont.className}>
         <ToasterProvider />
         <LoginModal />
         <RegisterModal />
-        <NavBar />
+        <NavBar currentUser={currentUser}/>
         {children}
       </body>
     </html>
