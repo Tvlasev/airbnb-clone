@@ -1,4 +1,5 @@
 import ToasterProvider from "./Providers/ToasterProvider";
+import LoginModal from "./components/Modals/LoginModal";
 import Modal from "./components/Modals/Modal";
 import RegisterModal from "./components/Modals/RegisterModal";
 import NavBar from "./components/NavBar/NavBar";
@@ -21,6 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={nunitoFont.className}>
         <ToasterProvider />
+        <LoginModal />
         <RegisterModal />
         <NavBar />
         {children}
