@@ -44,7 +44,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
   const bodyContent = () => {
     return (
       <div className="flex flex-col gap-4">
-        <Heading title="Welcome to Airbnb" subtitle="Create an account!" />
+        <Heading title="Welcome to Airbnb" subtitle="Create an account" />
         <Input
           id="email"
           label="Email"
